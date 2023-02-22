@@ -1,0 +1,60 @@
+.block_courseselect-flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.block_courseselect-flex-row > .block_courseselect-standard-column {
+    flex: 1 1 55%;
+}
+
+.block_courseselect-flex-row > .block_courseselect-level-column {
+    flex: 1 1 15%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 8em;
+}
+
+.block_courseselect-flex-row > .block_courseselect-subject-column {
+    flex: 1 1 30%;
+}
+
+.block_courseselect-flex-row > div > select {
+    height: 18rem;
+}
+
+.block_courseselect-flex-row > div > div > select {
+    height: 14rem;
+}
+
+.block_courseselect-flex-row > div {
+    text-align: center;
+}
+
+#block_courseselect-standard-search {
+    margin-top: 0.5rem;
+    min-width: 100%;
+    margin-bottom: 0;
+}
+
+.block_courseselect-select {
+    width: 100%;
+}
+
+.block_courseselect .deleteresponses {
+    margin-top: -2em;
+}
+
+
+.block_courseselect #block_courseselect-complete-practice-assessment:not([disabled]) {
+    color: var(--btn-prim-text-color-active);
+    background: var(--btn-prim-bg-color-active);
+    border-color: var(--btn-prim-border-color-active);
+}
+
+.block_courseselect #block_courseselect-complete-practice-assessment:hover:not([disabled]),
+.block_courseselect #block_courseselect-complete-practice-assessment:focus:not([disabled]) {
+    color: var(--btn-prim-text-color-focus);
+    background: var(--btn-prim-bg-color-focus);
+    border-color: var(--btn-prim-border-color-focus);
+}

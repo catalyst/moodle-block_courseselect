@@ -1,0 +1,80 @@
+{{!
+   This file is part of Moodle - http://moodle.org/
+
+   Moodle is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   Moodle is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+
+    @template block_courseselect/block
+
+    Block Assessor Practice Tool
+
+    This template creates the content for the block courseselect
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * subjects (array)
+
+    Example context (json):
+    {
+        "subjects": [
+            {
+                "id": 1,
+                "name": "English",
+            },
+            {
+                "id": 2,
+                "name": "Geography",
+            }
+        ]
+    }
+}}
+<div class="block_courseselect">
+  <p>
+    {{#str}}helptext, block_courseselect{{/str}}
+  </p>
+  <div class="block_courseselect-flex-row">
+    <div class="block_courseselect-subject-column">
+      <label for="block_courseselect-subject-select">{{#str}}subject, block_courseselect{{/str}}</label>
+      <select id="block_courseselect-subject-select" class="block_courseselect-select" size="10" autocomplete="off">
+        {{#subjects}}
+          <option value="{{ id }}">{{ name }}</option>
+        {{/subjects}}
+      </select>
+    </div>
+    <div class="block_courseselect-level-column">
+      <label for="block_courseselect-level-select" style="display: none;">{{#str}}level, block_courseselect{{/str}}</label>
+      <select id="block_courseselect-level-select" class="block_courseselect-select" size="10" autocomplete="off"  style="display: none;">
+      </select>
+    </div>
+    <div class="block_courseselect-standard-column">
+      <div style="display: none;">
+        <label for="block_courseselect-standard-select">{{#str}}standard, block_courseselect{{/str}}</label>
+        <select id="block_courseselect-standard-select" class="block_courseselect-select" size="8" autocomplete="off">
+        </select>
+        <form>
+          <input type="text" id="block_courseselect-standard-search" placeholder="{{#str}}searchstandards, block_courseselect{{/str}}">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer" style="margin-top: 15px;">
+    <input id="block_courseselect-complete-practice-assessment" type="button" value="{{#str}}start, block_courseselect{{/str}}" disabled>
+  </div>
+</div>

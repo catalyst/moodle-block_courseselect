@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/courseselect/db" VERSION="20220712" COMMENT="XMLDB file for Moodle blocks/courseselect"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_courseselect_conflevel" COMMENT="Table for storing the user confidence levels">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="superseded" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="0 means this is most up to date confidence level"/>
+        <FIELD NAME="level" TYPE="int" LENGTH="1" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="block_courseselect_conflevel_courseid_userid_idx" UNIQUE="false" FIELDS="courseid, userid"/>
+        <INDEX NAME="block_courseselect_conflevel_courseid_userid_superseded_idx" UNIQUE="false" FIELDS="userid, courseid, superseded"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
